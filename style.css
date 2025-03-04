@@ -1,4 +1,8 @@
 
+:root {
+    interpolate-size: allow-keywords;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -52,5 +56,16 @@ h1 {
 
 .answer3 {
     color: hsl(144, 91%, 14%);
+}
+
+
+::details-content {
+    height: 0;
+    overflow: clip;
+    transition: height 500ms ease, content-visibility 500ms ease allow-discrete;
+}
+
+.details[open]::details-content {
+    height: auto;
 }
 
